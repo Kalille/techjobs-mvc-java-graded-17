@@ -1,51 +1,80 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <title>Fragment</title>
+<table th:fragment="jobTable(jobs)" class="job-listing" th:each="job : ${jobs}">
+    <tr>
+        <td>ID</td>
+        <td th:text="${job.id}"></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td th:text="${job.name}"></td>
+    </tr>
+    <tr>
+        <td>Employer</td>
+        <td th:text="${job.employer}" >
+        </td>
+    </tr>
+    <tr>
+        <td>Location</td>
+        <td th:text="${job.location}" >
+        </td>
+    </tr>
+    <tr>
+        <td>Position Type</td>
+        <td th:text="${job.positionType}">
+        </td>
+    </tr>
+    <tr>
+        <td>Skill</td>
+        <td th:text="${job.coreCompetency}" >
+        </td>
+    </tr>
+</table>
 
+<!--        <table th:fragment="jobTable(jobs)" class="job-listing" th:each="job : ${jobs}">-->
+<!--            <tr>-->
+<!--                <td>ID</td>-->
+<!--                <td th:text="${job.id}"></td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>Name</td>-->
+<!--                <td th:text="${job.name}"></td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>Employer</td>-->
+<!--                <td >-->
+<!--                    <a th:href="@{/list/jobs(column=${'employer'}, value=${job.employer})}">-->
+<!--                        <span th:text="${job.employer}"></span>-->
+<!--                    </a>-->
 
-        <table th:fragment="jobTable(jobs)" class="job-listing" th:each="job : ${jobs}">
-            <tr>
-                <td>ID</td>
-                <td th:text="${job.id}"></td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td th:text="${job.name}"></td>
-            </tr>
-            <tr>
-                <td>Employer</td>
-                <td >
-                    <a th:href="@{/list/jobs(column=${'employer'}, value=${job.employer})}">
-                        <span th:text="${job.employer}"></span>
-                    </a>
-
-                </td>
-            </tr>
-            <tr>
-                <td>Location</td>
-                <td >
-                    <a th:href="@{/list/jobs(column=${'location'}, value=${job.location})}">
-                        <span th:text="${job.location}"></span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Position Type</td>
-                <td >
-                    <a th:href="@{/list/jobs(column=${'positionType'}, value=${job.positionType})}">
-                        <span th:text="${job.positionType}"></span>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Skill</td>
-                <td >
-                    <a th:href="@{/list/jobs(column=${'coreCompetency'}, value=${job.coreCompetency})}">
-                        <span th:text="${job.coreCompetency}"></span>
-                    </a>
-                </td>
-            </tr>
-        </table>
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>Location</td>-->
+<!--                <td >-->
+<!--                    <a th:href="@{/list/jobs(column=${'location'}, value=${job.location})}">-->
+<!--                        <span th:text="${job.location}"></span>-->
+<!--                    </a>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>Position Type</td>-->
+<!--                <td >-->
+<!--                    <a th:href="@{/list/jobs(column=${'positionType'}, value=${job.positionType})}">-->
+<!--                        <span th:text="${job.positionType}"></span>-->
+<!--                    </a>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>Skill</td>-->
+<!--                <td >-->
+<!--                    <a th:href="@{/list/jobs(column=${'coreCompetency'}, value=${job.coreCompetency})}">-->
+<!--                        <span th:text="${job.coreCompetency}"></span>-->
+<!--                    </a>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
 <head th:fragment="head">
 
     <!-- Bootstrap stylesheets and script -->
